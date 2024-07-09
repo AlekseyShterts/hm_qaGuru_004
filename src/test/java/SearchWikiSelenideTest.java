@@ -9,14 +9,14 @@ import static com.codeborne.selenide.Selenide.*;
 public class SearchWikiSelenideTest {
 
     @BeforeAll
-    public static void ccbeforeAll() {
+    public static void beforeAll() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://github.com";
         Configuration.pageLoadStrategy = "eager";
     }
 
     @Test
-    void SearchWikiSelenideTest() {
+    void searchWikiSelenideTest() {
         open("/selenide/selenide");
         $("#wiki-tab").click();
         $(".markdown-body").find(byText("Soft assertions")).shouldHave(text("Soft assertions")).click();
